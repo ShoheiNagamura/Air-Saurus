@@ -99,7 +99,7 @@ try:
         p = sense.get_pressure()
         h = sense.get_humidity()
         # 小数点以下第1位に四捨五入
-        t = round(t, 1)-8
+        t = round(t, 1)-12
         p = round(p, 1)
         h = round(h, 1)
 
