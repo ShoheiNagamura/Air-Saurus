@@ -51,10 +51,10 @@ def handle_message(event):
         if lineRes == '温度測定':
             exec(open("./sensor-of-HAT.py").read())
         elif lineRes == '再開':
-            subprocess.run('/home/pi/Desktop/raspi-factory/start.sh',shell=True,check=True)
+            subprocess.run('/home/pi/Desktop/Air-Saurus/start.sh',shell=True,check=True)
             print("再開")
         elif lineRes == '停止':
-            subprocess.run('/home/pi/Desktop/raspi-factory/stop.sh',shell=True,check=True)
+            subprocess.run('/home/pi/Desktop/Air-Saurus/stop.sh',shell=True,check=True)
             print("停止")
 
         else:

@@ -132,20 +132,20 @@ roomTemp = round(t)
 roomHumi = round(h)
 
 if fukai_say_round >= 70 & roomHumi > 60:
-    subprocess.run('/home/pi/Desktop/raspi-factory/thTalk-room/talkingRoomScript1.sh',shell=True,check=True)
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/line/lineScript1.sh',shell=True,check=True)
+    subprocess.run('/home/pi/Desktop/Air-Saurus/thTalk-room/talkingRoomScript1.sh',shell=True,check=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/line/lineScript1.sh',shell=True,check=True)
     print(res)
     sense.set_pixels(sad)
 
 elif fukai_say_round >= 70 & roomHumi <= 60:
-    subprocess.run('/home/pi/Desktop/raspi-factory/thTalk-room/talkingRoomScript2.sh',shell=True,check=True)
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/line/lineScript2.sh',shell=True,check=True)
+    subprocess.run('/home/pi/Desktop/Air-Saurus/thTalk-room/talkingRoomScript2.sh',shell=True,check=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/line/lineScript2.sh',shell=True,check=True)
     print(res)
     sense.set_pixels(normal)
 
 elif fukai_say_round < 70 & roomTemp < 18 :
-    subprocess.run('./thTalk-room/talkingRoomScript3.sh',shell=True,check=True)
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/line/lineScript3.sh',shell=True,check=True)
+    subprocess.run('/home/pi/Desktop/Air-Saurus/thTalk-room/talkingRoomScript3.sh',shell=True,check=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/line/lineScript3.sh',shell=True,check=True)
     print(res)
     sense.set_pixels(sad)
 
@@ -183,19 +183,19 @@ print(fukai_otherText)
 
 
 if round_fukai > 80:
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/thTalk-other/talking80.sh',shell=True,check=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/thTalk-other/talking80.sh',shell=True,check=True)
     print(res)
 elif round_fukai > 76:
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/thTalk-other/talking70.sh',shell=True,check=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/thTalk-other/talking70.sh',shell=True,check=True)
     print(res)
 elif round_fukai > 61:
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/thTalk-other/talking65.sh',shell=True,check=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/thTalk-other/talking65.sh',shell=True,check=True)
     print(res)
 elif round_fukai > 49:
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/thTalk-other/talking60.sh',shell=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/thTalk-other/talking60.sh',shell=True)
     print(res)
 else:
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/thTalk-other/talking50.sh',shell=True,check=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/thTalk-other/talking50.sh',shell=True,check=True)
     print(res)
 
 x = float(temp_say)
@@ -219,7 +219,7 @@ print(type(intDifference))
 #室温と外気温の差が１０度以上あれば赤が点灯、以下であれば緑が点灯
 if intDifference > 10:
     sense.show_message("Caution!", text_colour=white, back_colour=red, scroll_speed=0.05)
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/line/line-alert.sh',shell=True,check=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/line/line-alert.sh',shell=True,check=True)
     print(res)
 
     sleep(1)
@@ -227,7 +227,7 @@ if intDifference > 10:
     
 else:
     sense.show_message("OK!", text_colour=white, back_colour=blue, scroll_speed=0.05)
-    res = subprocess.run('/home/pi/Desktop/raspi-factory/line/line-alert-under10.sh',shell=True,check=True)
+    res = subprocess.run('/home/pi/Desktop/Air-Saurus/line/line-alert-under10.sh',shell=True,check=True)
     print(res)
     sleep(1)
     sense.clear()
